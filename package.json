@@ -5,9 +5,11 @@
   "author": "Frederick Alcantara",
   "license": "MIT",
   "scripts": {
-    "server": "live-server public/",
-    "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
+    "dev-server": "webpack-dev-server",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -27,7 +29,9 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "validator": "^9.1.2",
-    "webpack": "^3.10.0",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
     "webpack-dev-server": "^2.9.7"
   }
 }
